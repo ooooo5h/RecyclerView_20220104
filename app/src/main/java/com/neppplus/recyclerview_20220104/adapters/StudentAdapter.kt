@@ -29,6 +29,8 @@ class StudentAdapter(
     }
 
     override fun getItemCount(): Int {
+//        mList에 몇개의 데이터가 들어있나? => 뿌려줄 줄의 갯수
+        return mList.size
 
     }
 
