@@ -33,7 +33,7 @@ class StudentAdapter(
 //            학생 데이터를 하나 받으면, 텍스트뷰에 연결해주는 함수
             txtName.text = data.name
             txtAddress.text = data.address
-            txtAge.text = "(${data.birthYear}세)"
+            txtAge.text = "(${data.getAge()}세)"
         }
     }
 
