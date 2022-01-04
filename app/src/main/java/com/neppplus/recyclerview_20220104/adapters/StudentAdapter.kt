@@ -1,5 +1,6 @@
 package com.neppplus.recyclerview_20220104.adapters
 
+import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
 // 학생들 한 명 데이터 + 학생 한 명의 xml을 조합해서 => 위치에 맞게 보내주는 역할
@@ -8,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class StudentAdapter : RecyclerView.Adapter<>() {
 
 //    StudentAdapter 클래스 안에서 사용할, 내부 전용 클래스를 추가로 생성해야함
-    inner class MyViewHolder : RecyclerView.ViewHolder() {
+    inner class MyViewHolder(row: View) : RecyclerView.ViewHolder(row) {
 
 
     }
