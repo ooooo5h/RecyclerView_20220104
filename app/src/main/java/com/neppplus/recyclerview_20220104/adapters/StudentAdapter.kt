@@ -1,9 +1,11 @@
 package com.neppplus.recyclerview_20220104.adapters
 
 import android.content.Context
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.neppplus.recyclerview_20220104.R
 import com.neppplus.recyclerview_20220104.models.Student
 
 // 학생들 한 명 데이터 + 학생 한 명의 xml을 조합해서 => 위치에 맞게 보내주는 역할
@@ -21,6 +23,11 @@ class StudentAdapter(
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
+//        1. 한 줄을 표현하는 xml을 가지고, 코틀린의 변수에 담아두자(inflate)
+        val row = LayoutInflater.from(mContext).inflate(R.layout.student_list_item, parent, false)
+
+//        2. row를 MyViewHolder로 감싸서 리턴
+        return MyViewHolder(row)
 
     }
 
