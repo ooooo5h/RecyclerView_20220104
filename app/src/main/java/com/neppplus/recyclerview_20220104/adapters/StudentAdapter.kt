@@ -17,14 +17,24 @@ class StudentAdapter(
     val mList: List<Student>, // 어떤 목록을 보여줄건지, 그 목록을 통째로 받아오기
 ) : RecyclerView.Adapter<StudentAdapter.MyViewHolder>() {
 
-//    StudentAdapter 클래스 안에서 사용할, 내부 전용 클래스를 추가로 생성해야함
+//          StudentAdapter 클래스 안에서 사용할, 내부 전용 클래스를 추가로 생성해야함
     inner class MyViewHolder(row: View) : RecyclerView.ViewHolder(row) {
-
-//        xml의 id가 붙어있는 태그들을 멤버변수에 담아두자
+    
+//          xml의 id가 붙어있는 태그들을 멤버변수에 담아두자
+    
         val txtName = row.findViewById<TextView>(R.id.txtName)
         val txtAge = row.findViewById<TextView>(R.id.txtAge)
         val txtAddress = row.findViewById<TextView>(R.id.txtAddress)
 
+//        찾아낸 태그 변수/실제 목록의 데이터를 반영 함수
+    
+        fun bind(data: Student) {
+            
+//            학생 데이터를 하나 받으면, 텍스트뷰에 연결해주는 함수
+            txtName.text = data.name
+            txtAddress.text = data.address
+            txtAge.text = "(${data.birthYear}세)"            
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
