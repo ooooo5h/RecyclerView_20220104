@@ -6,4 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 // 안드로이드에서 제공하는 기초 작업을 상속받아서 일부만 수정하자
 
 class StudentAdapter : RecyclerView.Adapter<>() {
+
+//    StudentAdapter 클래스 안에서 사용할, 내부 전용 클래스를 추가로 생성해야함
+    inner class MyViewHolder : RecyclerView.ViewHolder() {
+
+
+    }
+
 }
